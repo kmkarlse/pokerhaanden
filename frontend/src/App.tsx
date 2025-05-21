@@ -1,17 +1,14 @@
+import { Poker } from "./components/poker";
 import "./styling/main.scss";
 
 function App() {
   return (
     <div className="container">
       <header>
-        <h1>Pokerhånden case</h1>
+        <h1>Pokerhånden</h1>
       </header>
       <main>
-        <section className="poker-section">
-          <article className="poker-card">
-            <h2>HAND</h2>
-          </article>
-        </section>
+        <Poker />
       </main>
     </div>
   );
