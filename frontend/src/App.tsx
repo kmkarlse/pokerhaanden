@@ -1,5 +1,5 @@
-import { Poker } from "./components/poker";
-import "./styling/main.scss";
+import { Poker } from "./components/poker/poker";
+import "./main.scss";
 
 function App() {
   return (

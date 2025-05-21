@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import type { Card, PlayResponse } from "../interface/response";
+import type { Card, PlayResponse } from "../../interface/response";
+import "./poker.scss";
 
 export const Poker = () => {
   const [response, setResponse] = useState<PlayResponse | null>(null);

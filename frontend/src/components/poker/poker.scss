@@ -1,0 +1,39 @@
+button {
+  max-width: 100px;
+  max-height: 30px;
+  margin: 0.5rem;
+  padding: 5px;
+}
+
+.poker-section {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+  .poker-card {
+    max-height: 200px;
+    max-width: 100px;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    margin: 0.5rem;
+  }
+
+  .analysis-card {
+    display: flex;
+    flex-direction: row;
+    max-height: 200px;
+    background-color: white;
+    margin: 0.5rem;
+
+    .column-layout {
+      display: flex;
+      flex-direction: column;
+      padding: 0 5px 0 5px;
+    }
+
+    p {
+      padding: 0.5rem;
+    }
+  }
+}
