@@ -1,0 +1,17 @@
+.analysis-card {
+  display: flex;
+  flex-direction: row;
+  max-height: 200px;
+  background-color: white;
+  margin: 0.5rem;
+
+  .column-layout {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px 0 5px;
+  }
+
+  p {
+    padding: 0.5rem;
+  }
+}

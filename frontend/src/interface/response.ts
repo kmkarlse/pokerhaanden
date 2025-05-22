@@ -13,3 +13,9 @@ export interface PlayResponse {
   hand: Card[];
   analysis: HandAnalysis;
 }
+
+export interface PlayHistory {
+  hand: Card[];
+  analysis: HandAnalysis;
+  timeStamp: string;
+}

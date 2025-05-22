@@ -36,3 +36,9 @@ export interface HandAnalysis {
   valueCounts: Record<string, number>;
   typeCounts: Record<string, number>;
 }
+
+export interface HandHistory {
+  hand: Card[];
+  analysis: HandAnalysis;
+  timeStamp: string;
+}

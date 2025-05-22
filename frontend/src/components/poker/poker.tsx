@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import type { Card, PlayResponse } from "../../interface/response";
+import type { PlayResponse } from "../../interface/response";
 import "./poker.scss";
+import { HandCard } from "../handCard/handCard";
+import { AnalysisCard } from "../analysis/analysisCard";
 
 export const Poker = () => {
   const [response, setResponse] = useState<PlayResponse | null>(null);
@@ -21,30 +23,10 @@ export const Poker = () => {
 
   return (
     <>
-      <button onClick={getNewHand}>Get new hand</button>
       <section className="poker-section">
-        {response?.hand?.map((card: Card, i) => (
-          <article className="poker-card" key={i}>
-            {card.value}
-          </article>
-        ))}
-        <article className="analysis-card">
-          <div className="column-layout">
-            <p>Highest Card: {response?.analysis.highestCard}</p>
-            <p>Type: {response?.analysis.rank}</p>
-          </div>
-          {response && (
-            <>
-              {Object.entries(response.analysis.valueCounts).map(
-                ([value, count]) => (
-                  <p key={value}>
-                    {value.toUpperCase()} : {count}
-                  </p>
-                )
-              )}
-            </>
-          )}
-        </article>
+        <button onClick={getNewHand}>Get new hand</button>
+        <HandCard cards={response?.hand} />
+        <AnalysisCard analysis={response?.analysis} />
       </section>
     </>
   );

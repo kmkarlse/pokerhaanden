@@ -1,3 +1,4 @@
+import { History } from "./components/history/history";
 import { Poker } from "./components/poker/poker";
 import "./main.scss";
 
@@ -9,6 +10,7 @@ function App() {
       </header>
       <main>
         <Poker />
+        <History />
       </main>
     </div>
   );
