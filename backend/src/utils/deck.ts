@@ -4,6 +4,7 @@ import {
   Card,
   HandAnalysis,
   HandRank,
+  Hand,
 } from "../models/deck-model";
 
 export const generateDeck = (): Card[] => {
@@ -19,8 +20,7 @@ export const generateDeck = (): Card[] => {
 };
 
 export const generateHand = (deck: Card[], count: number): Card[] => {
-  const shuffle = [...deck].sort(() => Math.random() - 0.5);
-
+  const shuffle = deck.sort(() => Math.random() - 0.5);
   return shuffle.slice(0, count);
 };
 

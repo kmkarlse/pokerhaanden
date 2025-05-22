@@ -1,0 +1,12 @@
+.multideck-container {
+  display: flex;
+  flex-direction: column;
+
+  form {
+    margin: 0.5rem;
+
+    label {
+      margin: 0 0.5rem 0 0;
+    }
+  }
+}
