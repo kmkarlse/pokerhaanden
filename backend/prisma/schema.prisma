@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -17,7 +16,9 @@ datasource db {
 model Hand {
   id Int @id @default(autoincrement())
   winner Boolean
+  rank String?
   cards Card[]
+  createdAt DateTime @default(now())
 }
 
 model Card {

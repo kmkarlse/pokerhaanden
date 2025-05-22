@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { analyzeHand, generateDeck, generateHand } from "./utils/deck";
 import { HandAnalysis, HandHistory } from "./models/deck-model";
 import { multipleDeks, winnerDeck } from "./utils/multipleDecks";
+import { getSavedHands, saveHands } from "./db/hand.service";
 dotenv.config();
 
 const app = express();
@@ -32,11 +33,19 @@ app.get("/history", (req: Request, res: Response) => {
   res.json(handHistory);
 });
 
-app.post("/multiplayer", (req: Request, res: Response) => {
+app.post("/multiplayer", async (req: Request, res: Response) => {
   const count = Number(req.body.count);
   const hands = multipleDeks(count);
   const markedWinners = winnerDeck(hands);
-  res.send(markedWinners);
+
+  await saveHands(markedWinners);
+
+  res.json(markedWinners);
+});
+
+app.get("/getHands", async (req: Request, res: Response) => {
+  const hands = await getSavedHands();
+  res.json(hands);
 });
 
 const PORT = process.env.PORT || 8000;
