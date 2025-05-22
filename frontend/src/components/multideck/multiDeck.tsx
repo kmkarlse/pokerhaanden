@@ -25,8 +25,6 @@ export const MultiDeck = () => {
     })
       .then((res) => res.json())
       .then((data: Hand[]) => {
-        console.log(data);
-
         setHands(data);
       });
   };
