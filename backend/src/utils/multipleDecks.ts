@@ -17,7 +17,7 @@ export const multipleDeks = (count: number): Hand[] => {
       (deckCard: Card) =>
         !cards.some((handCard: Card) => handCard.value === deckCard.value)
     );
-    hands.push({ cards });
+    hands.push({ cards, winner: false });
   }
 
   return hands;
@@ -34,11 +34,11 @@ export const winnerDeck = (hands: Hand[]): Hand[] => {
       const cmp = compareHands(current.analysis, acc[0].analysis);
 
       if (cmp > 0) {
-        return [current]; // New best
+        return [current];
       } else if (cmp === 0) {
-        return [...acc, current]; // Tie
+        return [...acc, current];
       } else {
-        return acc; // Keep current best
+        return acc;
       }
     },
     [analyzed[0]]
