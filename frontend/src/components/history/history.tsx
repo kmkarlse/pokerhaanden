@@ -20,7 +20,7 @@ export const History = () => {
     <section className="history">
       <button onClick={fetchHistory}>History</button>
       {history?.map((data: PlayHistory, i) => (
-        <HandCard key={i} cards={data?.hand} />
+        <HandCard key={i} cards={data?.hand} player={i} />
       ))}
     </section>
   );
