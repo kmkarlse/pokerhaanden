@@ -11,7 +11,7 @@ export const HandCard: React.FC<HandCardProps> = ({ cards, winnerHand }) => {
     <div className="hand-content">
       {cards?.map((card: Card, i) => (
         <article key={i} className={`poker-card ${winnerHand ? "winner" : ""}`}>
-          {card.value}
+          <p className="card-value">{card.value}</p>
         </article>
       ))}
       {winnerHand ? <h2>Winner</h2> : <p></p>}
