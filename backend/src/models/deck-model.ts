@@ -58,4 +58,5 @@ export interface HandHistory {
 export interface Hand {
   cards: Card[];
   winner?: boolean;
+  rank?: string;
 }

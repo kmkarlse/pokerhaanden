@@ -25,6 +25,8 @@ export const MultiDeck = () => {
     })
       .then((res) => res.json())
       .then((data: Hand[]) => {
+        console.log(data);
+
         setHands(data);
       });
   };
@@ -51,6 +53,7 @@ export const MultiDeck = () => {
           cards={hand.cards}
           winnerHand={hand.winner}
           player={i}
+          rank={hand.rank}
         />
       ))}
     </section>

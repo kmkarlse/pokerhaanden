@@ -4,7 +4,6 @@ import {
   Card,
   HandAnalysis,
   HandRank,
-  Hand,
 } from "../models/deck-model";
 
 export const generateDeck = (): Card[] => {

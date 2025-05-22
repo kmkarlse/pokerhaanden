@@ -49,6 +49,7 @@ export const winnerDeck = (hands: Hand[]): Hand[] => {
   return hands.map((hand) => ({
     ...hand,
     winner: winningHands.includes(hand),
+    rank: analyzeHand(hand.cards).rank,
   }));
 };
 

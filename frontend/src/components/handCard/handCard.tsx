@@ -5,12 +5,14 @@ type HandCardProps = {
   cards?: Card[];
   winnerHand?: boolean;
   player: number;
+  rank?: string;
 };
 
 export const HandCard: React.FC<HandCardProps> = ({
   cards,
   winnerHand,
   player,
+  rank,
 }) => {
   return (
     <div className="hand-content">
@@ -20,9 +22,13 @@ export const HandCard: React.FC<HandCardProps> = ({
         </article>
       ))}
       {winnerHand ? (
-        <h2>Winner, Player: {player + 1}</h2>
+        <h2>
+          Winner, Player: {player + 1}, {rank}
+        </h2>
       ) : (
-        <p>Player: {player + 1}</p>
+        <p>
+          Player: {player + 1}, {rank}
+        </p>
       )}
     </div>
   );
