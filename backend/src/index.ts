@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { analyzeHand, generateDeck, generateHand } from "./utils/deck";
 import { HandAnalysis, HandHistory } from "./models/deck-model";
-import { multipleDeks } from "./utils/multipleDecks";
+import { multipleDeks, winnerDeck } from "./utils/multipleDecks";
 dotenv.config();
 
 const app = express();
@@ -35,7 +35,8 @@ app.get("/history", (req: Request, res: Response) => {
 app.post("/multiplayer", (req: Request, res: Response) => {
   const count = Number(req.body.count);
   const hands = multipleDeks(count);
-  res.send(hands);
+  const markedWinners = winnerDeck(hands);
+  res.send(markedWinners);
 });
 
 const PORT = process.env.PORT || 8000;

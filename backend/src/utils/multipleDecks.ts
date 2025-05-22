@@ -44,7 +44,12 @@ export const winnerDeck = (hands: Hand[]): Hand[] => {
     [analyzed[0]]
   );
 
-  return best.map((entry) => entry.hand);
+  const winningHands = best.map((entry) => entry.hand);
+
+  return hands.map((hand) => ({
+    ...hand,
+    winner: winningHands.includes(hand),
+  }));
 };
 
 const compareHands = (a: HandAnalysis, b: HandAnalysis): number => {
