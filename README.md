@@ -7,4 +7,4 @@ Backend
 - Node.js / Express / Typescript
 
 DB
-- Prisma postgres
+- Prisma
