@@ -11,6 +11,7 @@ export const History = () => {
     fetch("http://localhost:8000/history")
       .then((res) => res.json())
       .then((data: PlayHistory[]) => {
+        data.reverse();
         setHistory(data);
       })
       .catch((err) => console.error("Error fetching history", err));
@@ -20,7 +21,7 @@ export const History = () => {
     <section className="history">
       <button onClick={fetchHistory}>History</button>
       {history?.map((data: PlayHistory, i) => (
-        <HandCard key={i} cards={data?.hand} player={i} />
+        <HandCard key={i} cards={data?.hand} player={0} />
       ))}
     </section>
   );
