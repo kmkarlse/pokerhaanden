@@ -10,7 +10,7 @@ DB
 - Prisma
 
 
-.env inkludert i repo pga. det ikke er noe farlig der :) 
+.env inkludert i repo 
 
 docker compose up -d --build
 
