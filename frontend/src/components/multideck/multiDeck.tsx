@@ -4,7 +4,7 @@ import type { Hand } from "../../interface/multiple";
 import { HandCard } from "../handCard/handCard";
 
 export const MultiDeck = () => {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(2);
   const [hands, setHands] = useState<Hand[] | null>(null);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +37,7 @@ export const MultiDeck = () => {
           type="number"
           name="count"
           id="players"
-          min={1}
+          min={2}
           max={10}
           step={1}
           value={count}
@@ -45,8 +45,13 @@ export const MultiDeck = () => {
         />
         <button type="submit">Submit</button>
       </form>
-      {hands?.map((hand: Hand) => (
-        <HandCard cards={hand.cards} winnerHand={hand.winner} />
+      {hands?.map((hand: Hand, i) => (
+        <HandCard
+          key={i}
+          cards={hand.cards}
+          winnerHand={hand.winner}
+          player={i}
+        />
       ))}
     </section>
   );

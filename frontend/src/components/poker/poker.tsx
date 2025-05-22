@@ -28,7 +28,7 @@ export const Poker = () => {
       </section>
       <section className="poker-section">
         <button onClick={getNewHand}>Get new hand</button>
-        <HandCard cards={response?.hand} />
+        <HandCard cards={response?.hand} player={0} />
         <AnalysisCard analysis={response?.analysis} />
       </section>
     </>

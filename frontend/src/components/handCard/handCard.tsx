@@ -4,9 +4,14 @@ import "./handCard.scss";
 type HandCardProps = {
   cards?: Card[];
   winnerHand?: boolean;
+  player: number;
 };
 
-export const HandCard: React.FC<HandCardProps> = ({ cards, winnerHand }) => {
+export const HandCard: React.FC<HandCardProps> = ({
+  cards,
+  winnerHand,
+  player,
+}) => {
   return (
     <div className="hand-content">
       {cards?.map((card: Card, i) => (
@@ -14,7 +19,11 @@ export const HandCard: React.FC<HandCardProps> = ({ cards, winnerHand }) => {
           <p className="card-value">{card.value}</p>
         </article>
       ))}
-      {winnerHand ? <h2>Winner</h2> : <p></p>}
+      {winnerHand ? (
+        <h2>Winner, Player: {player + 1}</h2>
+      ) : (
+        <p>Player: {player + 1}</p>
+      )}
     </div>
   );
 };
