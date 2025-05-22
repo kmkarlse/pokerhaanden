@@ -46,7 +46,7 @@ export const MultiDeck = () => {
         <button type="submit">Submit</button>
       </form>
       {hands?.map((hand: Hand) => (
-        <HandCard cards={hand.cards} />
+        <HandCard cards={hand.cards} winnerHand={hand.winner} />
       ))}
     </section>
   );
